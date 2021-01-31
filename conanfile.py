@@ -64,6 +64,6 @@ class OpenclIcdLoaderConan(ConanFile):
         self.cpp_info.libs = ["OpenCL"]
         if not self.options.shared:
             if self.settings.os == "Linux":
-                self.cpp_info.system_libs = ["dl", "ptread"]
+                self.cpp_info.system_libs = ["dl", "pthread"]
             elif self.settings.os == "Windows":
                 self.cpp_info.system_libs = ["cfgmgr32", "runtimeobject"]
